@@ -1,12 +1,8 @@
 :root {
   color-scheme: dark;
-  --fur: #e07a2f;
-  --fur-deep: #c45e16;
-  --belly: #f3c48a;
-  --snout: #ffe3c2;
   --ink: #24170f;
   --paper: #fff8ef;
-  --room: #1b1630;
+  --room: #1a1410;
   font-family: "Avenir Next", "Segoe UI", ui-rounded, sans-serif;
 }
 
@@ -19,9 +15,10 @@ body {
   min-height: 100vh;
   color: var(--paper);
   background:
-    radial-gradient(circle at 50% 18%, rgba(255, 196, 120, 0.28), transparent 26%),
-    radial-gradient(circle at 80% 0%, rgba(120, 90, 200, 0.35), transparent 32%),
-    linear-gradient(180deg, #2a2150 0%, var(--room) 42%, #120e1c 100%);
+    radial-gradient(ellipse at 50% 12%, rgba(232, 176, 96, 0.32), transparent 34%),
+    radial-gradient(ellipse at 18% 80%, rgba(120, 72, 36, 0.28), transparent 40%),
+    radial-gradient(ellipse at 88% 30%, rgba(90, 56, 28, 0.22), transparent 36%),
+    linear-gradient(180deg, #3a2a1c 0%, var(--room) 48%, #0e0a08 100%);
 }
 
 .stage {
@@ -64,7 +61,7 @@ h1 {
   color: var(--ink);
   font-size: 1.15rem;
   line-height: 1.35;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.22);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.28);
 }
 
 .alf {
@@ -74,8 +71,9 @@ h1 {
   margin-top: 8px;
   background: transparent;
   cursor: pointer;
-  width: min(420px, 92vw);
-  border-radius: 40%;
+  width: min(420px, 88vw);
+  border-radius: 24px;
+  line-height: 0;
 }
 
 .alf:focus-visible {
@@ -83,96 +81,22 @@ h1 {
   outline-offset: 10px;
 }
 
-.alf svg {
+.alf-gif {
+  display: block;
   width: 100%;
   height: auto;
-  overflow: visible;
-  filter: drop-shadow(0 18px 20px rgba(0, 0, 0, 0.28));
-}
-
-.shadow {
-  fill: rgba(0, 0, 0, 0.28);
-}
-
-.torso,
-.arm,
-.head,
-.ear,
-.lid {
-  fill: var(--fur);
-}
-
-.belly {
-  fill: var(--belly);
-}
-
-.snout {
-  fill: var(--snout);
-}
-
-.wrinkle {
-  fill: none;
-  stroke: #b85a18;
-  stroke-width: 4;
-  stroke-linecap: round;
-  opacity: 0.7;
-}
-
-.ear-inner {
-  fill: #a34712;
-}
-
-.nose {
-  fill: #4a2a22;
-}
-
-.nose-shine {
-  fill: rgba(255, 255, 255, 0.45);
-}
-
-.mouth {
-  fill: none;
-  stroke: #6a3418;
-  stroke-width: 5;
-  stroke-linecap: round;
-}
-
-.white {
-  fill: #fffdf8;
-}
-
-.pupil {
-  fill: #1b140f;
-}
-
-.glint {
-  fill: white;
-}
-
-.brow {
-  fill: none;
-  stroke: var(--fur-deep);
-  stroke-width: 7;
-  stroke-linecap: round;
-}
-
-.lid {
-  transform-box: fill-box;
-  transform-origin: center top;
-  transform: scaleY(0);
-}
-
-.alf.wink .eye.right .lid {
-  animation: wink 0.55s ease;
-}
-
-.body {
-  transform-origin: 180px 300px;
+  border-radius: 24px;
+  filter: drop-shadow(0 18px 22px rgba(0, 0, 0, 0.34));
+  transform-origin: center bottom;
   animation: breathe 3.6s ease-in-out infinite;
 }
 
+.alf.wink .alf-gif {
+  animation: wink-bounce 0.55s ease, breathe 3.6s ease-in-out infinite;
+}
+
 .count {
-  margin: 4px 0 0;
+  margin: 16px 0 0;
   color: #d9cbb8;
 }
 
@@ -187,14 +111,16 @@ h1 {
   border: 0;
 }
 
-@keyframes wink {
+@keyframes wink-bounce {
   0%,
   100% {
-    transform: scaleY(0);
+    transform: translateY(0) scale(1);
   }
-  35%,
+  35% {
+    transform: translateY(4px) scale(0.97);
+  }
   65% {
-    transform: scaleY(1);
+    transform: translateY(-6px) scale(1.03);
   }
 }
 
@@ -209,12 +135,11 @@ h1 {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .body {
+  .alf-gif {
     animation: none;
   }
 
-  .alf.wink .eye.right .lid {
+  .alf.wink .alf-gif {
     animation: none;
-    transform: scaleY(1);
   }
 }

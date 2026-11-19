@@ -20,40 +20,14 @@
 
       <button class="alf" id="alf" type="button" aria-describedby="bubble">
         <span class="sr">Альф. Нажми, чтобы подмигнул.</span>
-        <svg viewBox="0 0 360 420" aria-hidden="true">
-          <ellipse class="shadow" cx="180" cy="392" rx="92" ry="14" />
-          <g class="body">
-            <ellipse class="arm" cx="70" cy="262" rx="30" ry="18" transform="rotate(-32 70 262)" />
-            <ellipse class="arm" cx="290" cy="262" rx="30" ry="18" transform="rotate(32 290 262)" />
-            <ellipse class="torso" cx="180" cy="286" rx="104" ry="108" />
-            <ellipse class="belly" cx="180" cy="322" rx="58" ry="52" />
-            <ellipse class="head" cx="180" cy="156" rx="108" ry="96" />
-            <ellipse class="ear" cx="78" cy="104" rx="30" ry="58" transform="rotate(-24 78 104)" />
-            <ellipse class="ear" cx="282" cy="104" rx="30" ry="58" transform="rotate(24 282 104)" />
-            <ellipse class="ear-inner" cx="84" cy="112" rx="14" ry="34" transform="rotate(-24 84 112)" />
-            <ellipse class="ear-inner" cx="276" cy="112" rx="14" ry="34" transform="rotate(24 276 112)" />
-            <path class="wrinkle" d="M118 118 Q150 108 178 118" />
-            <path class="wrinkle" d="M182 116 Q214 106 244 116" />
-            <ellipse class="snout" cx="180" cy="228" rx="72" ry="58" />
-            <ellipse class="nose" cx="180" cy="200" rx="30" ry="20" />
-            <ellipse class="nose-shine" cx="168" cy="193" rx="8" ry="5" />
-            <path class="mouth" d="M146 246 Q180 270 214 246" />
-            <g class="eye left">
-              <ellipse class="white" cx="128" cy="150" rx="26" ry="28" />
-              <ellipse class="pupil" cx="136" cy="154" rx="11" ry="13" />
-              <ellipse class="glint" cx="141" cy="147" rx="4" ry="4" />
-              <ellipse class="lid" cx="128" cy="150" rx="28" ry="30" />
-            </g>
-            <g class="eye right">
-              <ellipse class="white" cx="232" cy="150" rx="26" ry="28" />
-              <ellipse class="pupil" cx="240" cy="154" rx="11" ry="13" />
-              <ellipse class="glint" cx="245" cy="147" rx="4" ry="4" />
-              <ellipse class="lid" cx="232" cy="150" rx="28" ry="30" />
-            </g>
-            <path class="brow left" d="M100 116 Q128 104 156 118" />
-            <path class="brow right" d="M204 118 Q232 104 260 116" />
-          </g>
-        </svg>
+        <img
+          class="alf-gif"
+          src="alf.gif"
+          alt=""
+          width="480"
+          height="480"
+          decoding="async"
+        />
       </button>
 
       <p class="count" id="count">Подмигиваний за всё время: 0</p>
