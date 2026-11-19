@@ -1,0 +1,8 @@
+services:
+  web:
+    build: .
+    image: alf-home:local
+    container_name: alf-home
+    restart: unless-stopped
+    ports:
+      - "8090:80"
